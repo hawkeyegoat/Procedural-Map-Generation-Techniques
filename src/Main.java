@@ -24,8 +24,12 @@ public class Main {
         //DLA.generateMap(2, 4000);
         //System.out.println(DLA);
 
-        VoronoiDiagram VD = new VoronoiDiagram(50, 50);
-        VD.generateMap(5    , "manhattan");
-        System.out.println(VD);
+        //VoronoiDiagram VD = new VoronoiDiagram(50, 50);
+        //VD.generateMap(5    , "manhattan");
+        //System.out.println(VD);
+
+        PerlinAndSimplexNoise PSN = new PerlinAndSimplexNoise(50, 50);
+        PSN.generateMap(4, 4.0, 0.5, 2.0);
+        System.out.println(PSN);
     }
 }
