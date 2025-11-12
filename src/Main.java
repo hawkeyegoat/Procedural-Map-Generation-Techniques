@@ -21,11 +21,11 @@ public class Main {
         //System.out.println(DW);
 
         //DiffusionLimitedAggregation DLA = new DiffusionLimitedAggregation(50, 50);
-        //DLA.generateMap(2, 4000);
+        //DLA.generateMap(2, 8000);
         //System.out.println(DLA);
 
         //VoronoiDiagram VD = new VoronoiDiagram(50, 50);
-        //VD.generateMap(5    , "manhattan");
+        //VD.generateMap(13, "manhattan");
         //System.out.println(VD);
 
         PerlinAndSimplexNoise PSN = new PerlinAndSimplexNoise(50, 50);

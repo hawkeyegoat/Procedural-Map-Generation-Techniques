@@ -2,18 +2,63 @@ package GenerationMethods;
 
 import java.util.Random;
 
+/**
+ * The {@code PerlinAndSimplexNoise} class provides a simple implementation
+ * of Perlin noise for 2D procedural generation.
+ * <p>
+ * This generator can produce smooth, continuous noise maps suitable for terrain
+ * heightmaps, texture synthesis, or any other application requiring natural-looking
+ * random variation.
+ * </p>
+ *
+ * <p><b>Algorithm Summary:</b></p>
+ * <ol>
+ *     <li>Generate a random permutation table for gradient lookup.</li>
+ *     <li>Compute Perlin noise at each point in the 2D grid, using multiple octaves
+ *         for increased detail and complexity.</li>
+ *     <li>Normalize the final noise values to the range [0, 1].</li>
+ * </ol>
+ *
+ * <p>
+ * This implementation supports multiple configurable parameters:
+ * </p>
+ * <ul>
+ *     <li><b>Octaves:</b> number of layers of detail (higher values increase complexity).</li>
+ *     <li><b>Frequency:</b> initial scale of noise variation.</li>
+ *     <li><b>Gain:</b> amplitude multiplier between octaves.</li>
+ *     <li><b>Lacunarity:</b> frequency multiplier between octaves.</li>
+ * </ul>
+ *
+ * <p><b>Note:</b> This implementation currently uses a Perlin-style gradient algorithm
+ * and does not include Simplex optimization, despite the class name.</p>
+ */
 public class PerlinAndSimplexNoise {
     private final int width;
     private final int height;
     private final double[][] noiseMap;
     private final Random rand = new Random();
 
+    /**
+     * Constructs a {@code PerlinAndSimplexNoise} generator for a map of the given size.
+     *
+     * @param width  the width of the map in cells
+     * @param height the height of the map in cells
+     */
     public PerlinAndSimplexNoise(int width, int height) {
         this.width = width;
         this.height = height;
         this.noiseMap = new double[width][height];
     }
 
+    /**
+     * Generates a Perlin noise map using the provided parameters.
+     *
+     * @param octaves     the number of noise layers to combine
+     * @param frequency   the initial frequency of the noise
+     * @param gain        the amplitude multiplier applied after each octave
+     * @param lacunarity  the frequency multiplier applied after each octave
+     * @return a 2D array of normalized noise values ranging from 0 to 1
+     */
     public double[][] generateMap(int octaves, double frequency, double gain, double lacunarity) {
         // Step 1: Generate random permutation for gradients
         int[] permutation = new int[512];
@@ -62,7 +107,14 @@ public class PerlinAndSimplexNoise {
         return noiseMap;
     }
 
-    // --- Core Perlin implementation ---
+    /**
+     * Computes 2D Perlin noise for a given coordinate using the provided permutation table.
+     *
+     * @param x           the x-coordinate in noise space
+     * @param y           the y-coordinate in noise space
+     * @param permutation the gradient lookup permutation table
+     * @return the noise value at the specified coordinate (typically in range [-1, 1])
+     */
     private double perlin(double x, double y, int[] permutation) {
         int xi = (int) Math.floor(x) & 255;
         int yi = (int) Math.floor(y) & 255;
@@ -84,15 +136,36 @@ public class PerlinAndSimplexNoise {
         return lerp(x1, x2, v);
     }
 
+    /**
+     * Smooths the interpolation curve for Perlin noise using the function 6t⁵ - 15t⁴ + 10t³.
+     *
+     * @param t the interpolation factor
+     * @return the smoothed interpolation value
+     */
     private double fade(double t) {
-        // 6t^5 - 15t^4 + 10t^3 smoothing curve
         return t * t * t * (t * (t * 6 - 15) + 10);
     }
 
+    /**
+     * Performs linear interpolation between two values.
+     *
+     * @param a the start value
+     * @param b the end value
+     * @param t the interpolation factor (0–1)
+     * @return the interpolated value
+     */
     private double lerp(double a, double b, double t) {
         return a + t * (b - a);
     }
 
+    /**
+     * Calculates a gradient vector based on the hash value and the input coordinates.
+     *
+     * @param hash the hashed gradient index
+     * @param x    the x-coordinate distance
+     * @param y    the y-coordinate distance
+     * @return the dot product of the gradient and the distance vector
+     */
     private double grad(int hash, double x, double y) {
         switch (hash & 3) {
             case 0: return x + y;
@@ -103,6 +176,20 @@ public class PerlinAndSimplexNoise {
         }
     }
 
+    /**
+     * Returns a visual representation of the generated noise map.
+     * <p>
+     * Each cell is represented by an ASCII character based on its height value:
+     * </p>
+     * <ul>
+     *     <li>{@code '~'} → water (low elevation)</li>
+     *     <li>{@code '.'} → plains</li>
+     *     <li>{@code '^'} → hills</li>
+     *     <li>{@code 'A'} → peaks (high elevation)</li>
+     * </ul>
+     *
+     * @return a string-formatted map visualization
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

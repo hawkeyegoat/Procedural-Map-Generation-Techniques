@@ -2,25 +2,55 @@ package GenerationMethods;
 
 import java.util.Random;
 
-//Algorithm:
-//
-//    Start with a solid map.
-//    Place a “drunkard” (e.g., a digging entity) at a random point.
-//    The drunkard moves randomly, carving out a path as it goes.
-//    Set a maximum distance for the drunkard to travel before it “passes out”.
-//    Repeat steps 2-4, spawning new drunkards within the open areas, until a desired percentage of the map is open. (using 1/3 as an example)
+/**
+ * The {@code DrunkardsWalk} class implements a procedural map generation algorithm
+ * that simulates a "drunkard" wandering randomly and carving out paths in a solid grid.
+ * <p>
+ * This algorithm is often used for generating cave-like maps or organic dungeon layouts.
+ * It begins with a solid map, places a random walker that moves randomly while carving
+ * open spaces, and repeats this process until a desired percentage of the map is open.
+ * </p>
+ *
+ * <p><b>Algorithm Summary:</b></p>
+ * <ol>
+ *     <li>Initialize a solid map filled with wall tiles ('#').</li>
+ *     <li>Choose a random starting point for the drunkard.</li>
+ *     <li>Move randomly in one of four directions, carving open tiles ('.') as it goes.</li>
+ *     <li>After a set number of steps, spawn a new drunkard within an open space.</li>
+ *     <li>Repeat until the target open-space percentage is reached.</li>
+ * </ol>
+ *
+ * <p>
+ * Typical use cases include cave generation, dungeon layouts, or any map that benefits
+ * from irregular organic shapes.
+ * </p>
+ */
 public class DrunkardsWalk {
     private final int width;
     private final int height;
     private final char[][] map;
     private final Random rand = new Random();
 
+    /**
+     * Constructs a {@code DrunkardsWalk} generator with the given map dimensions.
+     *
+     * @param width  the width of the map
+     * @param height the height of the map
+     */
     public DrunkardsWalk(int width, int height) {
         this.width = width;
         this.height = height;
         this.map = new char[width][height];
     }
 
+    /**
+     * Generates a map using the Drunkard's Walk algorithm.
+     *
+     * @param openPercent the fraction of the map to be opened (e.g., 0.33 for 33%)
+     * @param maxSteps    the maximum number of steps each drunkard takes before stopping
+     * @return a 2D character array representing the generated map,
+     *         where '#' indicates walls and '.' indicates open space
+     */
     public char[][] generateMap(double openPercent, int maxSteps) {
         // Step 1: Start with a solid map
         for (int x = 0; x < width; x++) {
@@ -79,6 +109,15 @@ public class DrunkardsWalk {
         return map;
     }
 
+    /**
+     * Returns a string representation of the generated map.
+     * <p>
+     * Each row of the map is placed on a new line.
+     * Walls are represented by '#' and open spaces by '.'.
+     * </p>
+     *
+     * @return a string-formatted view of the generated map
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
