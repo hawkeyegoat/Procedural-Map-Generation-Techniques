@@ -1,6 +1,4 @@
-import GenerationMethods.BinarySpacePartition;
-import GenerationMethods.CellularAutomata;
-import GenerationMethods.SimpleRoomPlacement;
+import GenerationMethods.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +14,18 @@ public class Main {
         //CA.generateMap(5);
         //System.out.println(CA);
 
-        
+        //DrunkardsWalk DW = new DrunkardsWalk(50, 50);
+        //DW.generateMap(0.33, 200);
+        //DW.generateMap(0.10, 50);
+        //DW.generateMap(0.75, 500);
+        //System.out.println(DW);
 
+        //DiffusionLimitedAggregation DLA = new DiffusionLimitedAggregation(50, 50);
+        //DLA.generateMap(2, 4000);
+        //System.out.println(DLA);
+
+        VoronoiDiagram VD = new VoronoiDiagram(50, 50);
+        VD.generateMap(5    , "manhattan");
+        System.out.println(VD);
     }
 }
