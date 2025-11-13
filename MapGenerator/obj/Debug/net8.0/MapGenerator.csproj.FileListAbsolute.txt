@@ -1,0 +1,15 @@
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.GeneratedMSBuildEditorConfig.editorconfig
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.AssemblyInfoInputs.cache
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.AssemblyInfo.cs
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.csproj.CoreCompileInputs.cache
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.sourcelink.json
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\bin\Debug\net8.0\MapGenerator.exe
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\bin\Debug\net8.0\MapGenerator.deps.json
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\bin\Debug\net8.0\MapGenerator.runtimeconfig.json
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\bin\Debug\net8.0\MapGenerator.dll
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\bin\Debug\net8.0\MapGenerator.pdb
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.dll
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\refint\MapGenerator.dll
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.pdb
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\MapGenerator.genruntimeconfig.cache
+D:\CodeFiles\proceduralGenerationExamples\C#Generation\Procedural-Map-Generation-Techniques\MapGenerator\obj\Debug\net8.0\ref\MapGenerator.dll
