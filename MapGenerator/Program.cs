@@ -49,7 +49,7 @@ namespace MapGenerator
 
                     // Diffusion Limited Aggregation
                     var dla = new DiffusionLimitedAggregation(50, 50);
-                    dla.GenerateMap(2, 8000);
+                    dla.GenerateMap(3, 3000);
                     Console.WriteLine("Diffusion Limited Aggregation");
                     Console.WriteLine(dla);
 

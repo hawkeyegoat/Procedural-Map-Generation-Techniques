@@ -43,10 +43,10 @@ namespace Assets
         /// <param name="height">The total height of the room</param>
         public Room(int x, int y, int width, int height)
         {
-            this.X = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
         }
 
         public int X { get; set; }
@@ -62,8 +62,8 @@ namespace Assets
         /// <returns><c>true</c> if the rooms overlap; <c>false</c> otherwise</returns>
         public bool Intersects(Room other)
         {
-            return (x <= other.X + other.width && x + width >= other.X &&
-                    y <= other.y + other.height && y + height >= other.y);
+            return (X <= other.X + other.Width && X + Width >= other.X &&
+                    Y <= other.Y + other.Height && y + Height >= other.Y);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Assets
         /// <returns>The center x-coordinate</returns>
         public int CenterX()
         {
-            return x + width / 2;
+            return X + Width / 2;
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Assets
         /// <returns>The center y-coordinate</returns>
         public int CenterY()
         {
-            return y + height / 2;
+            return Y + Height / 2;
         }
     }
 }

@@ -38,9 +38,9 @@ namespace Assets
         /// <param name="symbol">The character symbol to represent this point</param>
         public Point(int x, int y, char symbol)
         {
-            this.x = x;
-            this.y = y;
-            this.symbol = symbol;
+            X = x;
+            Y = y;
+            Symbol = symbol;
         }
         public int X {get; set;}
         public int Y {get; set;}

@@ -59,31 +59,30 @@ namespace Assets
         /// <param name="height">The height of the node</param>
         public Node(int x, int y, int width, int height)
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
         }
 
         /// <summary>
         /// Returns the y position of this node.
         /// </summary>
-        public int Y => y;
-
+        public int Y {get; set;}
         /// <summary>
         /// Returns the width of this node.
         /// </summary>
-        public int Width => width;
+        public int Width {get; set;}
 
         /// <summary>
         /// Returns the x position of this node.
         /// </summary>
-        public int X => x;
+        public int X {get; set;}
 
         /// <summary>
         /// Returns the height of this node.
         /// </summary>
-        public int Height => height;
+        public int Height {get; set;}
 
         /// <summary>
         /// Returns the left child node of this partition.
@@ -118,7 +117,7 @@ namespace Assets
         /// </summary>
         public bool IsLeaf()
         {
-            return left == null && right == null;
+            return Left == null && Right == null;
         }
     }
 }

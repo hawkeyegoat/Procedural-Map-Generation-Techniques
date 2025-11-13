@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MapGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+068f35a78c57325ed17c6c3d35d298905155b4b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82abfa6336766a4d862f50da5eca14d582752a82")]
 [assembly: System.Reflection.AssemblyProductAttribute("MapGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MapGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
